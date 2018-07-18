@@ -185,7 +185,7 @@ class board:
 		ret+=" "+xo(self.b[2][0])+"|"+xo(self.b[2][1])+"|"+xo(self.b[2][2])+"\n"
 		return(ret)
 	def img(self):
-		if(True):
+		if(False):
 			txt = self.report()
 			img = Image.new('RGB', (85, 135), (255, 255, 255))
 			d = ImageDraw.Draw(img)
@@ -211,8 +211,8 @@ class board:
 		
 
 b = board()
-b.playN(2)
-#b.playAll()
+#b.playN(2)
+b.playAll()
 b.outPut()
 
 

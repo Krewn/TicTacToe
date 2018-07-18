@@ -31,6 +31,7 @@ class board:
 	EDGES =""
 	edgelist = []
 	nNODES = 0
+	countWins = {1:0,0:0,-1:0}
 	def __init__(self):
 		self.b = [[0,0,0],[0,0,0],[0,0,0]]
 		self.plays = []
@@ -154,8 +155,13 @@ class board:
 				for k in bd:
 					if(bd[k] == 0):
 						self.play(k[0],k[1],self.turn)
-		for k in self.plays:
-			k.playAll()
+			for k in self.plays:
+				k.playAll()
+			if(len(self.plays) == 0):
+				board.countWins[self.winner]+=1
+		else:
+			board.countWins[self.winner]+=1
+		
 	def playN(self,n):
 		self.img()
 		if(self.winner == 0 and self.turnsPlayed < n):
@@ -208,6 +214,7 @@ class board:
 		fh.write(code)
 		fh.close()
 		print(board.nNODES)
+		print(board.countWins)
 		
 
 b = board()

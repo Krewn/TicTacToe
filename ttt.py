@@ -40,8 +40,8 @@ class board:
 		self.winner = 0
 		self.label = str(board.nNODES)
 		self.parent = None
-	def copy(self,board):
-		bd = board.boardData()
+	def copy(self,cp):
+		bd = cp.boardData()
 		for k in bd:
 			self.b[k[0]][k[1]] = bd[k]
 	def boardData(self):

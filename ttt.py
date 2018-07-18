@@ -187,9 +187,9 @@ class board:
 	def img(self):
 		if(True):
 			txt = self.report()
-			img = Image.new('RGB', (75, 130), (255, 255, 255))
+			img = Image.new('RGB', (75, 150), (255, 255, 255))
 			d = ImageDraw.Draw(img)
-			d.multiline_text((20, 5), txt, fill=(0, 0, 0))
+			d.multiline_text((20, 20), txt, fill=(0, 0, 0))
 			img.save(self.label+".png", 'png')
 		board.IMGS+="""
 		.selector('#"""+self.label+"""')
